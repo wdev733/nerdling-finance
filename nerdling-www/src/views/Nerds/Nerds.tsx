@@ -19,7 +19,7 @@ import PageHeader from '../../components/PageHeader'
 import { PROTOCOLS } from "../../helper/constants";
 import Page from '../../components/Page'
 
-import chef from '../../assets/img/chef.png'
+import logo from '../../assets/img/logo.png'
 
 const Nerds: React.FC = () => {
   const { path } = useRouteMatch();
@@ -44,9 +44,9 @@ const Nerds: React.FC = () => {
     <>
       <Page>
         <PageHeader
-          icon={<img src={chef} height="120" alt="" />}
-          subtitle="Earn SUSHI tokens by staking SushiSwap V2 SLP Tokens. Note: Current APY includes 2/3rd SUSHI emission that is locked and will be retroactively disbursed at a later date."
-          title="Select Your Favorite Dishes"
+          icon={<img src={logo} height="120" alt="" />}
+          subtitle="Earn NERDLING tokens by staking NERD's Tokens."
+          title="Select Your Favorite Nerds"
         />
         <ProtocolBar />
         <Farms />

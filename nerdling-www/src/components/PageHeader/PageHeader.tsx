@@ -36,12 +36,11 @@ const StyledIcon = styled.div`
   height: 120px;
   line-height: 120px;
   text-align: center;
-  width: 120px;
 `
 
 const StyledTitle = styled.h1`
   font-family: 'Kaushan Script', sans-serif;
-  color: ${(props) => props.theme.color.grey[600]};
+  color: #fecd3e;
   font-size: 36px;
   text-align: center;
   font-weight: 700;

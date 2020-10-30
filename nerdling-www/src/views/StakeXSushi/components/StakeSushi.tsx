@@ -60,20 +60,20 @@ const StakeSushi: React.FC<StakeProps> = ({}) => {
           <StyledCardHeader>
             <CardIcon>👨🏻‍🍳</CardIcon>
             <Value value={getBalanceNumber(tokenBalance)}/>
-            <Label text={`SUSHI Tokens Available`}/>
+            <Label text={`NERDLING Tokens Available`}/>
           </StyledCardHeader>
           <StyledCardActions>
             {!allowance.toNumber() ? (
               <Button
                 disabled={requestedApproval}
                 onClick={handleApprove}
-                text={`Approve SUSHI`}
+                text={`Approve NERDLING`}
               />
             ) : (
               <>
                 <Button
                   disabled={tokenBalance.eq(new BigNumber(0))}
-                  text="Convert to xSUSHI"
+                  text="Convert to xNERDLING"
                   onClick={onPresentDeposit}
                 />
                 <StyledActionSpacer/>

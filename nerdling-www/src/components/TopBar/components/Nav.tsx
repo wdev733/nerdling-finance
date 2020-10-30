@@ -8,12 +8,12 @@ const Nav: React.FC = () => {
       <StyledLink exact activeClassName="active" to="/">
         Home
       </StyledLink>
-      <StyledLink exact activeClassName="active" to="/nerds">
+      <StyledLink to="/nerds">
         Nerds
       </StyledLink>
-      <StyledLink exact activeClassName="active" to="/staking">
+      {/* <StyledLink exact to="/staking">
         Candy
-      </StyledLink>
+      </StyledLink> */}
       {/* <StyledLink exact activeClassName="active" to="/staking">
         Staking
       </StyledLink>
@@ -39,38 +39,42 @@ const StyledNav = styled.nav`
 `
 
 const StyledLink = styled(NavLink)`
-  color: ${(props) => props.theme.color.grey[400]};
+  color: #fecd3e;
   font-weight: 700;
-  padding-left: ${(props) => props.theme.spacing[3]}px;
-  padding-right: ${(props) => props.theme.spacing[3]}px;
+  margin-left: ${(props) => props.theme.spacing[3]}px;
+  margin-right: ${(props) => props.theme.spacing[3]}px;
   text-decoration: none;
   &:hover {
-    color: ${(props) => props.theme.color.grey[500]};
+    color: #fe833e;
+    border-bottom: 3px solid #fe833e;
   }
   &.active {
-    color: ${(props) => props.theme.color.primary.main};
+    color: #fe833e;
+    border-bottom: 3px solid #fe833e;
   }
   @media (max-width: 400px) {
-    padding-left: ${(props) => props.theme.spacing[2]}px;
-    padding-right: ${(props) => props.theme.spacing[2]}px;
+    margin-left: ${(props) => props.theme.spacing[2]}px;
+    margin-right: ${(props) => props.theme.spacing[2]}px;
   }
 `
 
 const StyledAbsoluteLink = styled.a`
-  color: ${(props) => props.theme.color.grey[400]};
+  color: #fecd3e;
   font-weight: 700;
-  padding-left: ${(props) => props.theme.spacing[3]}px;
-  padding-right: ${(props) => props.theme.spacing[3]}px;
+  margin-left: ${(props) => props.theme.spacing[3]}px;
+  margin-right: ${(props) => props.theme.spacing[3]}px;
   text-decoration: none;
   &:hover {
-    color: ${(props) => props.theme.color.grey[500]};
+    color: #fe833e;
+    border-bottom: 3px solid #fe833e;
   }
   &.active {
-    color: ${(props) => props.theme.color.primary.main};
+    color: #fe833e;
+    border-bottom: 3px solid #fe833e;
   }
   @media (max-width: 400px) {
-    padding-left: ${(props) => props.theme.spacing[2]}px;
-    padding-right: ${(props) => props.theme.spacing[2]}px;
+    margin-left: ${(props) => props.theme.spacing[2]}px;
+    margin-right: ${(props) => props.theme.spacing[2]}px;
   }
 `
 
