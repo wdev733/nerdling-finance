@@ -29,6 +29,8 @@ const ProtocolBar: React.FC = () => {
 const StyledNav = styled.nav`
   align-items: center;
   display: flex;
+  padding-top: ${(props) => props.theme.spacing[2]}px;
+  padding-bottom: ${(props) => props.theme.spacing[4]}px;
 `
 
 const StyledLink = styled(NavLink)`

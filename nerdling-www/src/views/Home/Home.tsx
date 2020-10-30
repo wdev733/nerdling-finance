@@ -31,14 +31,14 @@ const Home: React.FC = () => {
           margin: '0 auto',
         }}
       >
-        <Button text="🔪 See the Menu" to="/farms" variant="secondary" />
+        <Button text="Go to Nerds" to="/nerds" variant="secondary" />
       </div>
     </Page>
   )
 }
 
 const StyledInfo = styled.h3`
-  color: ${(props) => props.theme.color.grey[500]};
+  color: #fff;
   font-size: 16px;
   font-weight: 400;
   margin: 0;
@@ -46,7 +46,7 @@ const StyledInfo = styled.h3`
   text-align: center;
 
   > b {
-    color: ${(props) => props.theme.color.grey[600]};
+    color: #fff;
   }
 `
 

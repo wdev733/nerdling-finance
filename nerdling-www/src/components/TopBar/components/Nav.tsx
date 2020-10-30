@@ -24,7 +24,7 @@ const Nav: React.FC = () => {
         Exchange
       </StyledAbsoluteLink>*/}
       <StyledAbsoluteLink
-        href="https://help.sushidocs.com/"
+        href="#"
         target="_blank"
       >
         About

@@ -24,13 +24,13 @@ interface FarmWithStakedValue extends Farm, StakedValue {
 }
 
 const FarmCards: React.FC = () => {
-  const { protocol } = useParams();
+  const { protocol } = useParams()
   const [farms] = useFarms()
   const { account } = useWallet()
   const stakedValue = useAllStakedValue()
 
   const sushiIndex = farms.findIndex(
-    ({ tokenSymbol }) => tokenSymbol === 'SUSHI',
+    ({ tokenSymbol }) => tokenSymbol === 'NERDLING',
   )
 
   const sushiPrice =
@@ -53,11 +53,11 @@ const FarmCards: React.FC = () => {
         ...stakedValue[i],
         apy: stakedValue[i]
           ? sushiPrice
-            .times(SUSHI_PER_BLOCK)
-            .times(BLOCKS_PER_YEAR)
-            .times(stakedValue[i].poolWeight)
-            .times(3)
-            .div(stakedValue[i].totalWethValue)
+              .times(SUSHI_PER_BLOCK)
+              .times(BLOCKS_PER_YEAR)
+              .times(stakedValue[i].poolWeight)
+              .times(3)
+              .div(stakedValue[i].totalWethValue)
           : null,
       }
       const newFarmRows = [...farmRows]
@@ -87,10 +87,10 @@ const FarmCards: React.FC = () => {
           </StyledRow>
         ))
       ) : (
-          <StyledLoadingWrapper>
-            <Loader text="Cooking the rice ..." />
-          </StyledLoadingWrapper>
-        )}
+        <StyledLoadingWrapper>
+          <Loader text="Cooking the rice ..." />
+        </StyledLoadingWrapper>
+      )}
     </StyledCards>
   )
 }
@@ -100,7 +100,7 @@ interface FarmCardProps {
 }
 
 const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
-  const { protocol } = useParams();
+  const { protocol } = useParams()
   const [startTime, setStartTime] = useState(0)
   const [harvestable, setHarvestable] = useState(0)
 
@@ -139,16 +139,42 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
 
   return (
     <StyledCardWrapper>
-      {farm.tokenSymbol === 'SUSHI' && <StyledCardAccent />}
+      {/* {farm.tokenSymbol === 'NERDLING' && <StyledCardAccent />} */}
       <Card>
         <CardContent>
           <StyledContent>
-            <CardIcon>{farm.icon}</CardIcon>
+            <CardIcon>
+              <img
+                src={require(`../../../assets/img/nerds/${farm.icon}`)}
+                alt=""
+                height="65"
+              />
+            </CardIcon>
             <StyledTitle>{farm.name}</StyledTitle>
             <StyledDetails>
               <StyledDetail>Deposit {farm.lpToken}</StyledDetail>
               <StyledDetail>Earn {farm.earnToken.toUpperCase()}</StyledDetail>
             </StyledDetails>
+            <StyledInsight>
+              <span>APY</span>
+              <span>
+                {farm.apy
+                  ? `${farm.apy
+                      .times(new BigNumber(100))
+                      .toNumber()
+                      .toLocaleString('en-US')
+                      .slice(0, -1)}%`
+                  : 'Loading ...'}
+              </span>
+            </StyledInsight>
+            <StyledInsight>
+              <span>TVL{` `}($)</span>
+              <span>1,336,443</span>
+            </StyledInsight>
+            <StyledInsight>
+              <span>HARVEST{` `}(DRC)</span>
+              <span>0.00</span>
+            </StyledInsight>
             <Spacer />
             <Button
               disabled={!poolActive}
@@ -162,30 +188,6 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
                 />
               )}
             </Button>
-            <StyledInsight>
-              <span>APY</span>
-              <span>
-                {farm.apy
-                  ? `${farm.apy
-                    .times(new BigNumber(100))
-                    .toNumber()
-                    .toLocaleString('en-US')
-                    .slice(0, -1)}%`
-                  : 'Loading ...'}
-              </span>
-              {/* <span>
-                {farm.tokenAmount
-                  ? (farm.tokenAmount.toNumber() || 0).toLocaleString('en-US')
-                  : '-'}{' '}
-                {farm.tokenSymbol}
-              </span>
-              <span>
-                {farm.wethAmount
-                  ? (farm.wethAmount.toNumber() || 0).toLocaleString('en-US')
-                  : '-'}{' '}
-                ETH
-              </span> */}
-            </StyledInsight>
           </StyledContent>
         </CardContent>
       </Card>

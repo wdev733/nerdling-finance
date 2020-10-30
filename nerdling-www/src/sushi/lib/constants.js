@@ -49,8 +49,8 @@ export const contractAddresses = {
     1: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
   },
   xSushi: {
-    1: '0x8798249c2e607446efb7ad49ec89dd1865ff4272'
-  }
+    1: '0x8798249c2e607446efb7ad49ec89dd1865ff4272',
+  },
 }
 
 /*
@@ -80,10 +80,10 @@ export const supportedPools = [
     tokenAddresses: {
       1: '0x6b3595068778dd592e39a122f4f5a5cf09c90fe2',
     },
-    name: 'Sushi Party!',
-    symbol: 'SUSHI-ETH SLP',
-    tokenSymbol: 'SUSHI',
-    icon: '🍣',
+    name: 'Nerdling Party!',
+    symbol: 'NERDLING-ETH SLP',
+    tokenSymbol: 'NERDLING',
+    icon: '1-1.png',
     protocol: 'uniswap',
   },
   {
@@ -97,7 +97,7 @@ export const supportedPools = [
     name: 'UNI Unicorn',
     symbol: 'UNI-ETH SLP',
     tokenSymbol: 'UNI',
-    icon: '🦄',
+    icon: '1-2.png',
     protocol: 'uniswap',
   },
   {
@@ -111,7 +111,7 @@ export const supportedPools = [
     name: 'Tether Turtle',
     symbol: 'USDT-ETH SLP',
     tokenSymbol: 'USDT',
-    icon: '🐢',
+    icon: '1-3.png',
     protocol: 'uniswap',
   },
   {
@@ -125,7 +125,7 @@ export const supportedPools = [
     name: 'Circle Snail',
     symbol: 'USDC-ETH SLP',
     tokenSymbol: 'USDC',
-    icon: '🐌',
+    icon: '2-1.png',
     protocol: 'sushiswap',
   },
   {
@@ -139,7 +139,7 @@ export const supportedPools = [
     name: 'Donald DAI',
     symbol: 'DAI-ETH SLP',
     tokenSymbol: 'DAI',
-    icon: '🦆',
+    icon: '2-2.png',
     protocol: 'sushiswap',
   },
   {
@@ -153,7 +153,7 @@ export const supportedPools = [
     name: 'Spartan Dollar',
     symbol: 'SUSD-ETH SLP',
     tokenSymbol: 'SUSD',
-    icon: '🦍',
+    icon: '2-3.png',
     protocol: 'sushiswap',
   },
   {
@@ -167,7 +167,7 @@ export const supportedPools = [
     name: 'Umami Squid',
     symbol: 'UMA-ETH SLP',
     tokenSymbol: 'UMA',
-    icon: '🦑',
+    icon: '2-4.png',
     protocol: 'sushiswap',
   },
   {
@@ -181,8 +181,8 @@ export const supportedPools = [
     name: 'Band-osaurus',
     symbol: 'BAND-ETH SLP',
     tokenSymbol: 'BAND',
-    icon: '🦖',
-    protocol: 'pickle',
+    icon: '2-5.png',
+    protocol: 'sushiswap',
   },
   {
     pid: 8,
@@ -195,8 +195,8 @@ export const supportedPools = [
     name: 'Toadie Marine',
     symbol: 'LINK-ETH SLP',
     tokenSymbol: 'LINK',
-    icon: '🐸',
-    protocol: 'pickle',
+    icon: '2-6.png',
+    protocol: 'sushiswap',
   },
   {
     pid: 10,
@@ -209,8 +209,8 @@ export const supportedPools = [
     name: 'Ample Chicks',
     symbol: 'AMPL-ETH SLP',
     tokenSymbol: 'AMPL',
-    icon: '🐥',
-    protocol: 'luaswap',
+    icon: '2-7.png',
+    protocol: 'sushiswap',
   },
   {
     pid: 4,
@@ -223,8 +223,8 @@ export const supportedPools = [
     name: 'Compound Truffle',
     symbol: 'COMP-ETH SLP',
     tokenSymbol: 'COMP',
-    icon: '🍄',
-    protocol: 'dodo',
+    icon: '2-8.png',
+    protocol: 'sushiswap',
   },
   {
     pid: 5,
@@ -237,8 +237,8 @@ export const supportedPools = [
     name: 'Aave Boar',
     symbol: 'LEND-ETH SLP',
     tokenSymbol: 'LEND',
-    icon: '🐗',
-    protocol: 'sashimiswap',
+    icon: '3-1.png',
+    protocol: 'pickle',
   },
   {
     pid: 6,
@@ -251,8 +251,8 @@ export const supportedPools = [
     name: 'Synthetic Snake',
     symbol: 'SNX-ETH SLP',
     tokenSymbol: 'SNX',
-    icon: '🐍',
-    protocol: 'sashimiswap',
+    icon: '3-2.png',
+    protocol: 'pickle',
   },
   {
     pid: 11,
@@ -265,8 +265,8 @@ export const supportedPools = [
     name: 'YFI Whale',
     symbol: 'YFI-ETH SLP',
     tokenSymbol: 'YFI',
-    icon: '🐋',
-    protocol: 'sashimiswap',
+    icon: '3-3.png',
+    protocol: 'pickle',
   },
   {
     pid: 13,
@@ -279,8 +279,8 @@ export const supportedPools = [
     name: 'REN Rhino',
     symbol: 'REN-ETH SLP',
     tokenSymbol: 'REN',
-    icon: '🦏',
-    protocol: 'sashimiswap',
+    icon: '3-4.png',
+    protocol: 'pickle',
   },
   {
     pid: 14,
@@ -293,8 +293,8 @@ export const supportedPools = [
     name: 'BASED Bull',
     symbol: 'BASED-sUSD SLP',
     tokenSymbol: 'BASED',
-    icon: '🐂',
-    protocol: 'sashimiswap',
+    icon: '3-5.png',
+    protocol: 'pickle',
   },
   {
     pid: 15,
@@ -307,8 +307,8 @@ export const supportedPools = [
     name: 'SRM Shark',
     symbol: 'SRM-ETH SLP',
     tokenSymbol: 'SRM',
-    icon: '🦈',
-    protocol: 'sashimiswap',
+    icon: '3-6.png',
+    protocol: 'pickle',
   },
   {
     pid: 16,
@@ -321,8 +321,8 @@ export const supportedPools = [
     name: 'YAMv2',
     symbol: 'YAMv2-ETH SLP',
     tokenSymbol: 'YAMv2',
-    icon: '🍠',
-    protocol: 'sashimiswap',
+    icon: '3-7.png',
+    protocol: 'pickle',
   },
   {
     pid: 17,
@@ -335,8 +335,8 @@ export const supportedPools = [
     name: 'CRV Crocodile',
     symbol: 'CRV-ETH SLP',
     tokenSymbol: 'CRV',
-    icon: '🐊',
-    protocol: 'dodo',
+    icon: '3-8.png',
+    protocol: 'pickle',
   },
   {
     pid: 22,
@@ -349,8 +349,8 @@ export const supportedPools = [
     name: "Chef's Menu",
     symbol: 'CREAM-ETH SLP',
     tokenSymbol: 'CREAM',
-    icon: '👨🏻‍🍳',
-    protocol: 'dodo',
+    icon: '3-9.png',
+    protocol: 'pickle',
   },
   {
     pid: 24,
@@ -363,8 +363,8 @@ export const supportedPools = [
     name: "Chef's Menu",
     symbol: 'wNXM-ETH SLP',
     tokenSymbol: 'wNXM',
-    icon: '👨🏻‍🍳',
-    protocol: 'dodo',
+    icon: '4-1.png',
+    protocol: 'luaswap',
   },
   {
     pid: 25,
@@ -377,8 +377,8 @@ export const supportedPools = [
     name: "Chef's Menu",
     symbol: 'yUSD-ETH SLP',
     tokenSymbol: 'yUSD',
-    icon: '‍👨🏻‍🍳',
-    protocol: 'dodo',
+    icon: '4-2.png',
+    protocol: 'luaswap',
   },
   /////////
   {
@@ -392,8 +392,8 @@ export const supportedPools = [
     name: "Chef's Menu",
     symbol: 'OMG-ETH SLP',
     tokenSymbol: 'OMG',
-    icon: '‍👨🏻‍🍳',
-    protocol: 'dodo',
+    icon: '4-3.png',
+    protocol: 'luaswap',
   },
   {
     pid: 35,
@@ -406,8 +406,8 @@ export const supportedPools = [
     name: "Chef's Menu",
     symbol: 'PICKLE-ETH SLP',
     tokenSymbol: 'PICKLE',
-    icon: '‍👨🏻‍🍳',
-    protocol: 'dodo',
+    icon: '4-4.png',
+    protocol: 'luaswap',
   },
   {
     pid: 34,
@@ -420,7 +420,7 @@ export const supportedPools = [
     name: "Chef's Menu",
     symbol: 'CORE-ETH SLP',
     tokenSymbol: 'CORE',
-    icon: '‍👨🏻‍🍳',
+    icon: '4-5.png',
     protocol: 'luaswap',
   },
   {
@@ -434,7 +434,7 @@ export const supportedPools = [
     name: "Chef's Menu",
     symbol: 'MKR-ETH SLP',
     tokenSymbol: 'MKR',
-    icon: '‍👨🏻‍🍳',
+    icon: '4-6.png',
     protocol: 'luaswap',
   },
   {
@@ -448,8 +448,8 @@ export const supportedPools = [
     name: "Chef's Menu",
     symbol: 'wBTC-tBTC SLP',
     tokenSymbol: 'tBTC',
-    icon: '‍👨🏻‍🍳',
-    protocol: 'luaswap',
+    icon: '4-7.png',
+    protocol: 'yfvalue',
   },
   {
     pid: 31,
@@ -462,8 +462,8 @@ export const supportedPools = [
     name: "Chef's Menu",
     symbol: 'HEGIC-ETH SLP',
     tokenSymbol: 'HEGIC',
-    icon: '‍👨🏻‍🍳',
-    protocol: 'luaswap',
+    icon: '5-1.png',
+    protocol: 'dodo',
   },
   {
     pid: 37,
@@ -476,8 +476,8 @@ export const supportedPools = [
     name: "Chef's Menu",
     symbol: 'AAVE-ETH SLP',
     tokenSymbol: 'AAVE',
-    icon: '‍👨🏻‍🍳',
-    protocol: 'luaswap',
+    icon: '5-2.png',
+    protocol: 'dodo',
   },
   ///////
   {
@@ -489,10 +489,10 @@ export const supportedPools = [
       1: '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272',
     },
     name: 'Past Menu',
-    symbol: 'xSUSHI-ETH SLP',
-    tokenSymbol: 'xSUSHI',
-    icon: '🚫',
-    protocol: 'luaswap',
+    symbol: 'xNERDLING-ETH SLP',
+    tokenSymbol: 'xNERDLING',
+    icon: '5-3.png',
+    protocol: 'dodo',
   },
   {
     pid: 20,
@@ -505,8 +505,8 @@ export const supportedPools = [
     name: 'Past Menu',
     symbol: 'cDAI-DAI SLP',
     tokenSymbol: 'cDAI',
-    icon: '🚫',
-    protocol: 'yfvalue',
+    icon: '5-4.png',
+    protocol: 'dodo',
   },
   {
     pid: 21,
@@ -519,8 +519,8 @@ export const supportedPools = [
     name: 'Past Menu',
     symbol: 'WBTC-ETH SLP',
     tokenSymbol: 'WBTC',
-    icon: '‍🚫',
-    protocol: 'yfvalue',
+    icon: '5-5.png',
+    protocol: 'dodo',
   },
   {
     pid: 23,
@@ -533,8 +533,8 @@ export const supportedPools = [
     name: 'Past Menu',
     symbol: 'MEME-ETH SLP',
     tokenSymbol: 'MEME',
-    icon: '🚫',
-    protocol: 'yfvalue',
+    icon: '5-6.png',
+    protocol: 'dodo',
   },
   {
     pid: 26,
@@ -547,8 +547,8 @@ export const supportedPools = [
     name: 'Past Menu',
     symbol: 'yUSD-WBTC SLP',
     tokenSymbol: 'yUSD',
-    icon: '‍🚫',
-    protocol: 'luaswap',
+    icon: '6-1.png',
+    protocol: 'sashimiswap',
   },
   {
     pid: 27,
@@ -561,8 +561,8 @@ export const supportedPools = [
     name: 'Past Menu',
     symbol: 'CRO-ETH SLP',
     tokenSymbol: 'CRO',
-    icon: '‍🚫',
-    protocol: 'yfvalue',
+    icon: '6-2.png',
+    protocol: 'sashimiswap',
   },
   {
     pid: 28,
@@ -575,7 +575,7 @@ export const supportedPools = [
     name: 'Past Menu',
     symbol: 'renBTC-WBTC SLP',
     tokenSymbol: 'renBTC',
-    icon: '‍‍🚫',
-    protocol: 'yfvalue',
+    icon: '6-3.png',
+    protocol: 'sashimiswap',
   },
 ]

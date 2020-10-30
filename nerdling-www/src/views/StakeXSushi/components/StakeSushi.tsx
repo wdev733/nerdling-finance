@@ -21,7 +21,7 @@ interface StakeProps {
 }
 
 const StakeSushi: React.FC<StakeProps> = ({}) => {
-  const tokenName = "SUSHI"
+  const tokenName = "NERDLING"
   const [requestedApproval, setRequestedApproval] = useState(false)
 
   const allowance = useAllowanceStaking()

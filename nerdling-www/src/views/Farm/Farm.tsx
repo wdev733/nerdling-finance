@@ -57,7 +57,7 @@ const Farm: React.FC = () => {
   return (
     <>
       <PageHeader
-        icon={icon}
+        icon={<img src={require(`../../assets/img/nerds/${icon}`)} alt="" height="100" />}
         subtitle={`Deposit ${lpTokenName}  Tokens and earn ${earnTokenName}`}
         title={name}
       />
@@ -68,11 +68,7 @@ const Farm: React.FC = () => {
           </StyledCardWrapper>
           <Spacer />
           <StyledCardWrapper>
-            <Stake
-              lpContract={lpContract}
-              pid={pid}
-              tokenName={lpToken}
-            />
+            <Stake lpContract={lpContract} pid={pid} tokenName={lpToken} />
           </StyledCardWrapper>
         </StyledCardsWrapper>
         <Spacer size="lg" />

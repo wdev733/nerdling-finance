@@ -16,6 +16,8 @@ import Home from './views/Home'
 import Nerds from './views/Nerds'
 import Staking from "./views/Staking";
 
+import Farm from './views/Farm';
+
 const App: React.FC = () => {
   const [mobileMenu, setMobileMenu] = useState(false)
 
@@ -35,6 +37,9 @@ const App: React.FC = () => {
         <Switch>
           <Route path="/" exact>
             <Home />
+          </Route>
+          <Route path={`/nerds/:protocol/:farmId`}>
+            <Farm />
           </Route>
           <Route path={`/nerds/:protocol`}>
             <Nerds />

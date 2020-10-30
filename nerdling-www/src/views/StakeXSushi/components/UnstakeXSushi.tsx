@@ -25,7 +25,7 @@ const UnstakeXSushi: React.FC<HarvestProps> = ({lpContract}) => {
 
   const {onLeave} = useLeave()
 
-  const tokenName = "xSUSHI"
+  const tokenName = "xNERDLING"
 
   const [onPresentLeave] = useModal(
     <WithdrawModal
