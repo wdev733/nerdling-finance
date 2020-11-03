@@ -91,7 +91,8 @@ const Balances: React.FC = () => {
         <CardContent>
           <StyledBalances>
             <StyledBalance>
-              <SushiIcon />
+              {/* <SushiIcon /> */}
+              <img src={require("../../../assets/img/logo.png")} height="30" alt=""/>
               <Spacer />
               <div style={{ flex: 1 }}>
                 <Label text="Your NERDLING Balance" />
