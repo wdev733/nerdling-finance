@@ -18,6 +18,9 @@ import Staking from "./views/Staking";
 
 import Farm from './views/Farm';
 
+import Adapter from './helper/adapters'
+console.log(Adapter);
+
 const App: React.FC = () => {
   const [mobileMenu, setMobileMenu] = useState(false)
 

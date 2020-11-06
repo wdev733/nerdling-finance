@@ -13,62 +13,35 @@ import { getContract } from '../../utils/erc20'
 import Harvest from './components/Harvest'
 import Stake from './components/Stake'
 
+import { getNerdsByAdapter } from '../../helper/adapters';
+import { NERDLING_POOL } from "../../helper/constants";
+
 const Farm: React.FC = () => {
-  const { farmId } = useParams()
-  const {
-    pid,
-    lpToken,
-    lpTokenAddress,
-    tokenAddress,
-    earnToken,
-    name,
-    icon,
-  } = useFarm(farmId) || {
-    pid: 0,
-    lpToken: '',
-    lpTokenAddress: '',
-    tokenAddress: '',
-    earnToken: '',
-    name: '',
-    icon: '',
-  }
+  const { farmId, protocol } = useParams()
+
+  const selectedFarms = getNerdsByAdapter(protocol)
+
+  const farm = farmId == 0 ? NERDLING_POOL : selectedFarms.pools.filter((p: any) => p._pid == farmId)[0];
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-  const sushi = useSushi()
-  const { ethereum } = useWallet()
-
-  const lpContract = useMemo(() => {
-    return getContract(ethereum as provider, lpTokenAddress)
-  }, [ethereum, lpTokenAddress])
-
-  const { onRedeem } = useRedeem(getMasterChefContract(sushi))
-
-  const lpTokenName = useMemo(() => {
-    return lpToken
-  }, [lpToken])
-
-  const earnTokenName = useMemo(() => {
-    return earnToken.toUpperCase()
-  }, [earnToken])
-
   return (
     <>
       <PageHeader
-        icon={<img src={require(`../../assets/img/nerds/${icon}`)} alt="" height="100" />}
-        subtitle={`Deposit ${lpTokenName}  Tokens and earn ${earnTokenName}`}
-        title={name}
+        icon={farmId == 0 ? <img src={require(`../../assets/img/logo.png`)} alt="" height="100" /> : <img src={require(`../../assets/img/nerds/${protocol}/${farm._victimPoolId % selectedFarms.images + 1}.png`)} alt="" height="100" />}
+        subtitle={`Deposit ${farm.name}`}
+        title={farm.name}
       />
       <StyledFarm>
         <StyledCardsWrapper>
           <StyledCardWrapper>
-            <Harvest pid={pid} />
+            <Harvest pid={farm._pid} />
           </StyledCardWrapper>
           <Spacer />
           <StyledCardWrapper>
-            <Stake lpContract={lpContract} pid={pid} tokenName={lpToken} />
+            <Stake farm={{ ...farm }} />
           </StyledCardWrapper>
         </StyledCardsWrapper>
         <Spacer size="lg" />
@@ -79,9 +52,9 @@ const Farm: React.FC = () => {
         <Spacer size="md" />
         <StyledLink
           target="__blank"
-          href={`https://sushiswap.vision/pair/${lpTokenAddress}`}
+          href={`https://sushiswap.vision/pair/${farm.tokenAddress}`}
         >
-          {lpTokenName} Info
+          {/* {lpTokenName} Info */}Info
         </StyledLink>
       </StyledFarm>
     </>

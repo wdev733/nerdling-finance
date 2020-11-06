@@ -1,5 +1,7 @@
+import React, { useCallback, useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
 import BigNumber from 'bignumber.js'
-import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
 import { Contract } from 'web3-eth-contract'
 import Button from '../../../components/Button'
@@ -21,52 +23,79 @@ import { getBalanceNumber } from '../../../utils/formatBalance'
 import DepositModal from './DepositModal'
 import WithdrawModal from './WithdrawModal'
 
-interface StakeProps {
-  lpContract: Contract
-  pid: number
-  tokenName: string
+import pageActions from "../../../redux/page/actions";
+
+interface Farm {
+  name: string,
+  tokenName: string,
+  tokenAddress: string,
+  visible: boolean,
+  _pid: number,
+  _victimPoolId: number
 }
 
-const Stake: React.FC<StakeProps> = ({ lpContract, pid, tokenName }) => {
+interface StakeProps {
+  farm: Farm
+}
+
+const Stake: React.FC<StakeProps> = ({ farm }) => {
+  const dispatch = useDispatch();
+
+  const [tokenBalance, setTokenBalance] = useState(0);
+  const [stakedBalance, setStakedBalance] = useState(0);
+  const [allowance, setAllowance] = useState(0);
+
   const [requestedApproval, setRequestedApproval] = useState(false)
 
-  const allowance = useAllowance(lpContract)
-  const { onApprove } = useApprove(lpContract)
+  const getInitValues = useCallback(() => {
+    dispatch(pageActions.getBalance(farm.tokenAddress, (balance: any) => setTokenBalance(balance)));
+    dispatch(pageActions.getStaked(farm._pid, (staked: any) => setStakedBalance(staked.amount)));
+    dispatch(pageActions.getAllowance(farm.tokenAddress, (allowance: any) => setAllowance(allowance)));
+  }, [dispatch, farm._pid, farm.tokenAddress])
 
-  const tokenBalance = useTokenBalance(lpContract.options.address)
-  const stakedBalance = useStakedBalance(pid)
+  useEffect(() => {
+    getInitValues()
+  }, [dispatch, getInitValues,])
 
-  const { onStake } = useStake(pid)
-  const { onUnstake } = useUnstake(pid)
+  const handleStake = (amount: any) => {
+    dispatch(pageActions.depositToken(farm._pid, amount, callback))
+  }
+
+  const handleUnstake = (amount: any) => {
+    dispatch(pageActions.withdrawToken(farm._pid, amount, callback))
+  }
 
   const [onPresentDeposit] = useModal(
     <DepositModal
-      max={tokenBalance}
-      onConfirm={onStake}
-      tokenName={tokenName}
+      max={new BigNumber(tokenBalance)}
+      onConfirm={handleStake}
+      tokenName={farm.tokenName}
     />,
   )
 
   const [onPresentWithdraw] = useModal(
     <WithdrawModal
-      max={stakedBalance}
-      onConfirm={onUnstake}
-      tokenName={tokenName}
+      max={new BigNumber(stakedBalance)}
+      onConfirm={handleUnstake}
+      tokenName={farm.tokenName}
     />,
   )
 
-  const handleApprove = useCallback(async () => {
-    try {
-      setRequestedApproval(true)
-      const txHash = await onApprove()
-      // user rejected tx or didn't go thru
-      if (!txHash) {
-        setRequestedApproval(false)
-      }
-    } catch (e) {
-      console.log(e)
+  const callback = (status: any) => {
+    if (status) {
+      getInitValues();
     }
-  }, [onApprove, setRequestedApproval])
+  }
+
+  const handleApprove = () => {
+    setRequestedApproval(true)
+    dispatch(pageActions.approveToken(farm.tokenAddress, (status: any) => {
+      if (status) {
+        getInitValues();
+        setRequestedApproval(false);
+      }
+    }))
+  }
 
   return (
     <Card>
@@ -76,29 +105,29 @@ const Stake: React.FC<StakeProps> = ({ lpContract, pid, tokenName }) => {
             <CardIcon>
               <img src={require('../../../assets/img/running-nerd.png')} alt="" height="60" />
             </CardIcon>
-            <Value value={getBalanceNumber(stakedBalance)} />
-            <Label text={`${tokenName} Tokens Staked`} />
+            <Value value={getBalanceNumber(new BigNumber(stakedBalance))} />
+            <Label text={`${farm.tokenName} Tokens Staked`} />
           </StyledCardHeader>
           <StyledCardActions>
-            {!allowance.toNumber() ? (
+            {allowance <= 0 ? (
               <Button
                 disabled={requestedApproval}
                 onClick={handleApprove}
-                text={`Approve ${tokenName}`}
+                text={`Approve ${farm.tokenName}`}
               />
             ) : (
-              <>
-                <Button
-                  disabled={stakedBalance.eq(new BigNumber(0))}
-                  text="Unstake"
-                  onClick={onPresentWithdraw}
-                />
-                <StyledActionSpacer />
-                <IconButton onClick={onPresentDeposit}>
-                  <AddIcon />
-                </IconButton>
-              </>
-            )}
+                <>
+                  <Button
+                    disabled={(new BigNumber(stakedBalance)).eq(new BigNumber(0))}
+                    text="Unstake"
+                    onClick={onPresentWithdraw}
+                  />
+                  <StyledActionSpacer />
+                  <IconButton onClick={onPresentDeposit}>
+                    <AddIcon />
+                  </IconButton>
+                </>
+              )}
           </StyledCardActions>
         </StyledCardContentInner>
       </CardContent>

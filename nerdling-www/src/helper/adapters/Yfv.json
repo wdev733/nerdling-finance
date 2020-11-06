@@ -1,0 +1,39 @@
+{
+  "address": "0x11FEc9b44bCAe5c2D16142922dcA57cBfF8BdB52",
+  "name": "YFValue",
+  "images": 3,
+  "pools": [
+    {
+      "name": "WETH/VALUE",
+      "tokenName": "",
+      "tokenAddress": "0xBD14c6Bb5a5Cd7dc63BA224517B492983ABF75D7",
+      "visible": true,
+      "_pid": 125,
+      "_victimPoolId": 3
+    },
+    {
+      "name": "DAI/VALUE",
+      "tokenName": "",
+      "tokenAddress": "0x7B065A771d6E5bfbd67d8E8B15640feeD06FE075",
+      "visible": true,
+      "_pid": 126,
+      "_victimPoolId": 4
+    },
+    {
+      "name": "VALUE/WETH",
+      "tokenName": "",
+      "tokenAddress": "0xbd63d492bbb13d081D680CE1f2957a287FD8c57c",
+      "visible": true,
+      "_pid": 127,
+      "_victimPoolId": 6
+    },
+    {
+      "name": "VALUE/vUSD",
+      "tokenName": "",
+      "tokenAddress": "0x50007A6BF4a45374Aa5206C1aBbA88A1ffde1bAF",
+      "visible": true,
+      "_pid": 128,
+      "_victimPoolId": 7
+    }
+  ]
+}

@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import Button from '../../../components/Button'
 import Card from '../../../components/Card'
@@ -10,14 +13,36 @@ import useEarnings from '../../../hooks/useEarnings'
 import useReward from '../../../hooks/useReward'
 import { getBalanceNumber } from '../../../utils/formatBalance'
 
+import pageActions from "../../../redux/page/actions";
+
 interface HarvestProps {
   pid: number
 }
 
 const Harvest: React.FC<HarvestProps> = ({ pid }) => {
-  const earnings = useEarnings(pid)
+  const dispatch = useDispatch();
+
+  const [earnings, setEarnings] = useState(0);
   const [pendingTx, setPendingTx] = useState(false)
+
+  const getInitValues = useCallback(() => {
+    dispatch(pageActions.getStaked(pid, (staked: any) => setEarnings(staked.rewardDebt)));
+  }, [dispatch, pid])
+
+  useEffect(() => {
+    getInitValues()
+  }, [dispatch, getInitValues])
+
   const { onReward } = useReward(pid)
+  const handleHarvest = () => {
+    setPendingTx(true)
+    dispatch(pageActions.harvestToken(pid, callbackHarvest));
+  }
+
+  const callbackHarvest = (status: any) => {
+    console.log(status);
+    setPendingTx(false)
+  }
 
   return (
     <Card>
@@ -25,18 +50,14 @@ const Harvest: React.FC<HarvestProps> = ({ pid }) => {
         <StyledCardContentInner>
           <StyledCardHeader>
             <CardIcon><img src={require('../../../assets/img/logo.png')} alt="" height="60" /></CardIcon>
-            <Value value={getBalanceNumber(earnings)} />
+            <Value value={getBalanceNumber(new BigNumber(earnings))} />
             <Label text="NERDLING Earned" />
           </StyledCardHeader>
           <StyledCardActions>
             <Button
-              disabled={!earnings.toNumber() || pendingTx}
+              disabled={earnings <= 0 || pendingTx}
               text={pendingTx ? 'Collecting NERDLING' : 'Harvest'}
-              onClick={async () => {
-                setPendingTx(true)
-                await onReward()
-                setPendingTx(false)
-              }}
+              onClick={handleHarvest}
             />
           </StyledCardActions>
         </StyledCardContentInner>

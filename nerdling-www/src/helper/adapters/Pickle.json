@@ -1,0 +1,23 @@
+{
+  "address": "0xC625f7A58FEf49fD3dF7dc2Fd0C9ef622f0cb1E2",
+  "name": "Pickle",
+  "images": 7,
+  "pools": [
+    {
+      "name": "PICKLEWETH",
+      "tokenName": "",
+      "tokenAddress": "0xdc98556Ce24f007A5eF6dC1CE96322d65832A819",
+      "visible": true,
+      "_pid": 1,
+      "_victimPoolId": 0
+    },
+    {
+      "name": "pcrvPlain3andSUSD",
+      "tokenName": "",
+      "tokenAddress": "0x68d14d66B2B0d6E157c06Dc8Fefa3D8ba0e66a89",
+      "visible": true,
+      "_pid": 2,
+      "_victimPoolId": 9
+    }
+  ]
+}

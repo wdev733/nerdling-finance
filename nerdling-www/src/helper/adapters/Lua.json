@@ -1,0 +1,127 @@
+{
+  "address": "0xF238922CFAc1ef95B570c912a59654f8a2b8437c",
+  "name": "LuaSwap",
+  "images": 8,
+  "pools": [
+    {
+      "name": "TOMOE-ETH",
+      "tokenName": "",
+      "tokenAddress": "0x7885e359a085372EbCF1ed6829402f149D02c600",
+      "visible": true,
+      "_pid": 35,
+      "_victimPoolId": 0
+    },
+    {
+      "name": "TOMOE-USDT",
+      "tokenName": "",
+      "tokenAddress": "0xbFFD9FF55685A3B6940C59DCDCc69b1737363BE0",
+      "visible": true,
+      "_pid": 36,
+      "_victimPoolId": 1
+    },
+    {
+      "name": "TOMOE-USDC",
+      "tokenName": "",
+      "tokenAddress": "0xB10C1840f562f0ac914DA2bad3290833C75fdddF",
+      "visible": true,
+      "_pid": 37,
+      "_victimPoolId": 2
+    },
+    {
+      "name": "LUA-USDC",
+      "tokenName": "",
+      "tokenAddress": "0x96258BB42779Bf300cf69c9B5bD2Ba5245CB4bc4",
+      "visible": true,
+      "_pid": 38,
+      "_victimPoolId": 3
+    },
+    {
+      "name": "TOMOE-LUA",
+      "tokenName": "",
+      "tokenAddress": "0xE2f4cC0198150a7beA98E0a2A66fecafC30a5cD0",
+      "visible": true,
+      "_pid": 60,
+      "_victimPoolId": 4
+    },
+    {
+      "name": "SUSHI-LUA",
+      "tokenName": "",
+      "tokenAddress": "0xc9a72CC23f900b381FC6355afD8ee674B1F12DF6",
+      "visible": true,
+      "_pid": 61,
+      "_victimPoolId": 6
+    },
+    {
+      "name": "LUA-FRONT",
+      "tokenName": "",
+      "tokenAddress": "0x97e1081c5DECB27606dbcDEA9d8E615757aB11c4",
+      "visible": true,
+      "_pid": 62,
+      "_victimPoolId": 5
+    },
+    {
+      "name": "LUA-SRM",
+      "tokenName": "",
+      "tokenAddress": "0x26Da27Cd29D75BcD925665223B4416025450d756",
+      "visible": true,
+      "_pid": 129,
+      "_victimPoolId": 7
+    },
+    {
+      "name": "LUA-FTT",
+      "tokenName": "",
+      "tokenAddress": "0x38F9307839A8E82b071EA6Fcbef029814Ed88fcb",
+      "visible": true,
+      "_pid": 130,
+      "_victimPoolId": 8
+    },
+    {
+      "name": "LUA-ETH",
+      "tokenName": "",
+      "tokenAddress": "0x65FaBAF7e6c5380243E063D8559d84e589Db6438",
+      "visible": true,
+      "_pid": 131,
+      "_victimPoolId": 9
+    },
+    {
+      "name": "LUA-KAI",
+      "tokenName": "",
+      "tokenAddress": "0xeAAc91B4B28b97236605B1D40178D83C273dbe80",
+      "visible": true,
+      "_pid": 132,
+      "_victimPoolId": 10
+    },
+    {
+      "name": "LUA-OM",
+      "tokenName": "",
+      "tokenAddress": "0xfa1B8F29D9505d18b22F823B82E7Da886Dfc8bdf",
+      "visible": true,
+      "_pid": 133,
+      "_victimPoolId": 11
+    },
+    {
+      "name": "USDC-USDT",
+      "tokenName": "",
+      "tokenAddress": "0xB3558F47Fa914F7ec1dA1a6F52aB41eE63E81301",
+      "visible": true,
+      "_pid": 134,
+      "_victimPoolId": 12
+    },
+    {
+      "name": "WBTC-USDC",
+      "tokenName": "",
+      "tokenAddress": "0x66E10dEa0019dC7353D2e4106E9b84f1CFc17CBa",
+      "visible": true,
+      "_pid": 135,
+      "_victimPoolId": 13
+    },
+    {
+      "name": "UNI-LUA",
+      "tokenName": "",
+      "tokenAddress": "0xb195325642431b6aA6CD3C646591e7825BB3F90c",
+      "visible": true,
+      "_pid": 136,
+      "_victimPoolId": 14
+    }
+  ]
+}

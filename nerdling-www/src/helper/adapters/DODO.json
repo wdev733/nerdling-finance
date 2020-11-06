@@ -1,0 +1,111 @@
+{
+  "address": "0xcC4D57182d6976e60ac98BAe401DaeDdd4DC83f7",
+  "name": "Dodo",
+  "images": 3,
+  "pools": [
+    {
+      "name": "Wrapped Ether_DODO_LP_TOKEN_ (DLP)",
+      "tokenName": "",
+      "tokenAddress": "0xc11eCCDee225d644f873776A68A02eCD8c015697",
+      "visible": true,
+      "_pid": 93,
+      "_victimPoolId": 0
+    },
+    {
+      "name": "USD//C_DODO_LP_TOKEN_ (DLP)",
+      "tokenName": "",
+      "tokenAddress": "0x6a5Eb3555cBbD29016Ba6F6fFbCcEE28D57b2932",
+      "visible": true,
+      "_pid": 94,
+      "_victimPoolId": 1
+    },
+    {
+      "name": "ChainLink Token_DODO_LP_TOKEN_ (DLP)",
+      "tokenName": "",
+      "tokenAddress": "0xF03F3d2FbeE37F92eC91aE927a8019CACef4b738",
+      "visible": true,
+      "_pid": 95,
+      "_victimPoolId": 2
+    },
+    {
+      "name": "USD//C_DODO_LP_TOKEN_ (DLP)",
+      "tokenName": "",
+      "tokenAddress": "0x0F769BC3EcbdA8e0d78280c88e31609E899A1F78",
+      "visible": true,
+      "_pid": 96,
+      "_victimPoolId": 3
+    },
+    {
+      "name": "Synthetix Network Token_DODO_LP_TOKEN_ (DLP)",
+      "tokenName": "",
+      "tokenAddress": "0x5bd1b7d3930d7a5e8fd5aeec6b931C822C8Be14E",
+      "visible": true,
+      "_pid": 97,
+      "_victimPoolId": 6
+    },
+    {
+      "name": "USD Coin_DODO_LP_TOKEN_ (DLP)",
+      "tokenName": "",
+      "tokenAddress": "0x1b06A22b20362b4115388Ab8ca3ED0972230d78A",
+      "visible": true,
+      "_pid": 98,
+      "_victimPoolId": 7
+    },
+    {
+      "name": "Compound_DODO_LP_TOKEN_ (DLP)",
+      "tokenName": "",
+      "tokenAddress": "0x53Cf4694B427FcEf9BB1F4438B68dF51A10228D0",
+      "visible": true,
+      "_pid": 99,
+      "_victimPoolId": 8
+    },
+    {
+      "name": "USD Coin_DODO_LP_TOKEN_ (DLP)",
+      "tokenName": "",
+      "tokenAddress": "0x51baf2656778ad6D67b19A419F91D38C3d0b87B6",
+      "visible": true,
+      "_pid": 100,
+      "_victimPoolId": 9
+    },
+    {
+      "name": "Wrapped BTC_DODO_LP_TOKEN_ (DLP)",
+      "tokenName": "",
+      "tokenAddress": "0x2eC2A42901c761b295a9e6b95200cd0BdAa474Eb",
+      "visible": true,
+      "_pid": 101,
+      "_victimPoolId": 10
+    },
+    {
+      "name": "USD Coin_DODO_LP_TOKEN_ (DLP)",
+      "tokenName": "",
+      "tokenAddress": "0x0cDb21e20597d753C90458f5eF2083f6695eb794",
+      "visible": true,
+      "_pid": 102,
+      "_victimPoolId": 11
+    },
+    {
+      "name": "yearn.finance_DODO_LP_TOKEN_ (DLP)",
+      "tokenName": "",
+      "tokenAddress": "0xE2852C572FC42C9e2ec03197deFa42c647e89291",
+      "visible": true,
+      "_pid": 103,
+      "_victimPoolId": 12
+    },
+    {
+      "name": "USD Coin_DODO_LP_TOKEN_ (DLP)",
+      "tokenName": "",
+      "tokenAddress": "0xD9D0bd18DDfA753d0c88a060fFb60657bB0D7A07",
+      "visible": true,
+      "_pid": 104,
+      "_victimPoolId": 13
+    },
+    {
+      "name": "DODO",
+      "tokenName": "DODO",
+      "tokenAddress": "0x43Dfc4159D86F3A37A5A4B3D4580b888ad7d4DDd",
+      "visible": true,
+      "_pid": 105,
+      "_victimPoolId": 14
+    }
+  ]
+}

@@ -11,8 +11,6 @@ import WalletProviderModal from '../../components/WalletProviderModal'
 
 import useModal from '../../hooks/useModal'
 
-import Farm from '../Farm'
-
 import FarmCards from './components/FarmCards'
 
 const Farms: React.FC = () => {

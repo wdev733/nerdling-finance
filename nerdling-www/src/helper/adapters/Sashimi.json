@@ -1,0 +1,183 @@
+{
+  "address": "0x027D5602aA433a7F5c5444C3e820bC4A714b000A",
+  "name": "SashimiSwap",
+  "images": 6,
+  "pools": [
+    {
+      "name": "ETH-USDT",
+      "tokenName": "",
+      "tokenAddress": "0x490Ccb3C835597Ff31E525262235487f9426312b",
+      "visible": true,
+      "_pid": 70,
+      "_victimPoolId": 0
+    },
+    {
+      "name": "DAI-ETH",
+      "tokenName": "",
+      "tokenAddress": "0x51214310AC356b26Df2A9cAF3895398e533c4Fa9",
+      "visible": true,
+      "_pid": 71,
+      "_victimPoolId": 2
+    },
+    {
+      "name": "ELF-ETH",
+      "tokenName": "",
+      "tokenAddress": "0x28E240E04113877Bf99354E1E4f43a79E59c535A",
+      "visible": true,
+      "_pid": 72,
+      "_victimPoolId": 7
+    },
+    {
+      "name": "SASHIMI-ETH",
+      "tokenName": "",
+      "tokenAddress": "0x3fA4B0b3053413684d0B658689Ede7907bB4D69D",
+      "visible": true,
+      "_pid": 73,
+      "_victimPoolId": 9
+    },
+    {
+      "name": "SASHIMI-ELF",
+      "tokenName": "",
+      "tokenAddress": "0xf7bA0272e5BdD4911C1BAedb362700652959EDaF",
+      "visible": true,
+      "_pid": 74,
+      "_victimPoolId": 10
+    },
+    {
+      "name": "GT-SASHIMI",
+      "tokenName": "",
+      "tokenAddress": "0x2B773b3dB41971C069f79c257AB60Bdc8bd1ae5f",
+      "visible": true,
+      "_pid": 76,
+      "_victimPoolId": 12
+    },
+    {
+      "name": "GT-ETH",
+      "tokenName": "",
+      "tokenAddress": "0xb9f8077fe932E96A8572652fEeE35609C2809850",
+      "visible": true,
+      "_pid": 77,
+      "_victimPoolId": 17
+    },
+    {
+      "name": "HT-SASHIMI",
+      "tokenName": "",
+      "tokenAddress": "0xCEea282be8Da0F3F4b2Bc57bFd89F4b7Dd4454b1",
+      "visible": true,
+      "_pid": 78,
+      "_victimPoolId": 22
+    },
+    {
+      "name": "USDT-SASHIMI",
+      "tokenName": "",
+      "tokenAddress": "0x5dB60350383433F53147101e3E6cE1D5193c5671",
+      "visible": true,
+      "_pid": 79,
+      "_victimPoolId": 23
+    },
+    {
+      "name": "USDC-SASHIMI",
+      "tokenName": "",
+      "tokenAddress": "0x81e23D17f07D4D95Dcb9FD070b44332D2f34A874",
+      "visible": true,
+      "_pid": 80,
+      "_victimPoolId": 24
+    },
+    {
+      "name": "DAI-ETH",
+      "tokenName": "",
+      "tokenAddress": "0xE835db5C6145f6AC2CD1f697C271bcab022766Ad",
+      "visible": true,
+      "_pid": 81,
+      "_victimPoolId": 26
+    },
+    {
+      "name": "ETH-USDC",
+      "tokenName": "",
+      "tokenAddress": "0xD4F7CA1e212c5203074ECD9912dD803426eF4e10",
+      "visible": true,
+      "_pid": 82,
+      "_victimPoolId": 27
+    },
+    {
+      "name": "ETH-USDT",
+      "tokenName": "",
+      "tokenAddress": "0x9EC7De79572312d00f536b856B9E6fE7d0a37AF1",
+      "visible": true,
+      "_pid": 83,
+      "_victimPoolId": 28
+    },
+    {
+      "name": "WBTC-ETH",
+      "tokenName": "",
+      "tokenAddress": "0xc8b5B728165F5e59690bA486e4086027f34635Bd",
+      "visible": true,
+      "_pid": 84,
+      "_victimPoolId": 29
+    },
+    {
+      "name": "GAT-SASHIMI",
+      "tokenName": "",
+      "tokenAddress": "0x96559937e9c4475160CA040b16cDA93E3EfBD75A",
+      "visible": true,
+      "_pid": 85,
+      "_victimPoolId": 30
+    },
+    {
+      "name": "GAT-ETH",
+      "tokenName": "",
+      "tokenAddress": "0xd16d65266A65F6b149dE2849a1a36fe54693aD48",
+      "visible": true,
+      "_pid": 86,
+      "_victimPoolId": 31
+    },
+    {
+      "name": "HT-ETH",
+      "tokenName": "",
+      "tokenAddress": "0xC57D7265f0e5239afe37c4167acF027747efD752",
+      "visible": true,
+      "_pid": 87,
+      "_victimPoolId": 32
+    },
+    {
+      "name": "UNI-ETH",
+      "tokenName": "",
+      "tokenAddress": "0xE24b430952bdB793B0E6753D14C4FEC9B8A41813",
+      "visible": true,
+      "_pid": 88,
+      "_victimPoolId": 33
+    },
+    {
+      "name": "svUniswapV2 DAI-ETH",
+      "tokenName": "",
+      "tokenAddress": "0x56BB940D92AE9a45EBDc77e94C28B960CffD6168",
+      "visible": true,
+      "_pid": 89,
+      "_victimPoolId": 34
+    },
+    {
+      "name": "svUniswapV2 uSDC-ETH",
+      "tokenName": "",
+      "tokenAddress": "0xc5D00a4E730fC2e1C77764A74E5F1308A460de7F",
+      "visible": true,
+      "_pid": 90,
+      "_victimPoolId": 35
+    },
+    {
+      "name": "svUniswapV2 USDT-ETH",
+      "tokenName": "",
+      "tokenAddress": "0x8E95bc97B0C1B88Aa8708206C85c06299F778648",
+      "visible": true,
+      "_pid": 91,
+      "_victimPoolId": 36
+    },
+    {
+      "name": "svUniswapV2 WBTC-ETH",
+      "tokenName": "",
+      "tokenAddress": "0x81885d776D2963941ec7434F30D61B851E9697FA",
+      "visible": true,
+      "_pid": 92,
+      "_victimPoolId": 37
+    }
+  ]
+}

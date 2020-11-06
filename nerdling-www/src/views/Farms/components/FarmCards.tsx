@@ -1,5 +1,7 @@
-import BigNumber from 'bignumber.js'
 import React, { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from "react-redux";
+
+import BigNumber from 'bignumber.js'
 import Countdown, { CountdownRenderProps } from 'react-countdown'
 import styled, { keyframes } from 'styled-components'
 import { useWallet } from 'use-wallet'
@@ -9,7 +11,7 @@ import CardContent from '../../../components/CardContent'
 import CardIcon from '../../../components/CardIcon'
 import Loader from '../../../components/Loader'
 import Spacer from '../../../components/Spacer'
-import { Farm } from '../../../contexts/Farms'
+// import { Farm } from '../../../contexts/Farms'
 import useAllStakedValue, {
   StakedValue,
 } from '../../../hooks/useAllStakedValue'
@@ -19,94 +21,90 @@ import { getEarned, getMasterChefContract } from '../../../sushi/utils'
 import { bnToDec } from '../../../utils'
 import { useParams } from 'react-router-dom'
 
-interface FarmWithStakedValue extends Farm, StakedValue {
-  apy: BigNumber
+import { getNerdsByAdapter } from '../../../helper/adapters';
+import { NERDLING_POOL } from "../../../helper/constants";
+
+import pageActions from "../../../redux/page/actions";
+
+interface Farm {
+  name: string,
+  tokenName: string,
+  tokenAddress: string,
+  visible: boolean,
+  _pid: number,
+  _victimPoolId: number
+}
+
+interface Adapter {
+  name: string,
+  address: string,
+  images: number,
 }
 
 const FarmCards: React.FC = () => {
+  const dispatch = useDispatch();
+
   const { protocol } = useParams()
-  const [farms] = useFarms()
   const { account } = useWallet()
-  const stakedValue = useAllStakedValue()
 
-  const sushiIndex = farms.findIndex(
-    ({ tokenSymbol }) => tokenSymbol === 'NERDLING',
-  )
+  const selectedFarms = getNerdsByAdapter(protocol)
 
-  const sushiPrice =
-    sushiIndex >= 0 && stakedValue[sushiIndex]
-      ? stakedValue[sushiIndex].tokenPriceInWeth
-      : new BigNumber(0)
-
-  const BLOCKS_PER_YEAR = new BigNumber(2336000)
-  const SUSHI_PER_BLOCK = new BigNumber(100)
-
-  if (stakedValue[0] != undefined) {
-    // console.log(stakedValue[0].poolWeight.toString())
-    // console.log(stakedValue[0].totalWethValue.toString())
-  }
-  // console.log(farms);
-  const rows = farms.reduce<FarmWithStakedValue[][]>(
-    (farmRows, farm, i) => {
-      const farmWithStakedValue = {
-        ...farm,
-        ...stakedValue[i],
-        apy: stakedValue[i]
-          ? sushiPrice
-              .times(SUSHI_PER_BLOCK)
-              .times(BLOCKS_PER_YEAR)
-              .times(stakedValue[i].poolWeight)
-              .times(3)
-              .div(stakedValue[i].totalWethValue)
-          : null,
-      }
+  const rows = [NERDLING_POOL, ...selectedFarms.pools].reduce(
+    (farmRows: any, farm: any) => {
       const newFarmRows = [...farmRows]
-      if (farm.protocol === protocol) {
-        if (newFarmRows[newFarmRows.length - 1].length === 3) {
-          newFarmRows.push([farmWithStakedValue])
-        } else {
-          newFarmRows[newFarmRows.length - 1].push(farmWithStakedValue)
-        }
+      if (newFarmRows[newFarmRows.length - 1].length === 3) {
+        newFarmRows.push([{ ...farm }])
+      } else {
+        newFarmRows[newFarmRows.length - 1].push({ ...farm })
       }
       return newFarmRows
     },
     [[]],
   )
 
+  const adapter = {
+    name: selectedFarms.name,
+    address: selectedFarms.address,
+    images: selectedFarms.images
+  }
+
   return (
     <StyledCards>
       {!!rows[0].length ? (
-        rows.map((farmRow, i) => (
+        rows.map((farmRow: any, i: any) => (
           <StyledRow key={i}>
-            {farmRow.map((farm, j) => (
+            {farmRow.map((farm: any, j: any) => (
               <React.Fragment key={j}>
-                <FarmCard farm={farm} />
+                <FarmCard master={i === 0 && j === 0 ? true : false} adapter={adapter} farm={farm} />
                 {(j === 0 || j === 1) && <StyledSpacer />}
               </React.Fragment>
             ))}
           </StyledRow>
         ))
       ) : (
-        <StyledLoadingWrapper>
-          <Loader text="Cooking the rice ..." />
-        </StyledLoadingWrapper>
-      )}
+          <StyledLoadingWrapper>
+            <Loader text="Cooking the rice ..." />
+          </StyledLoadingWrapper>
+        )}
     </StyledCards>
   )
 }
 
 interface FarmCardProps {
-  farm: FarmWithStakedValue
+  master: boolean,
+  adapter: Adapter,
+  farm: Farm
 }
 
-const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
+const FarmCard: React.FC<FarmCardProps> = ({ master, adapter, farm }) => {
+
+  const dispatch = useDispatch();
+
   const { protocol } = useParams()
   const [startTime, setStartTime] = useState(0)
   const [harvestable, setHarvestable] = useState(0)
 
   const { account } = useWallet()
-  const { lpTokenAddress } = farm
-  const sushi = useSushi()
 
   const renderer = (countdownProps: CountdownRenderProps) => {
     const { hours, minutes, seconds } = countdownProps
@@ -120,66 +118,66 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
     )
   }
 
-  useEffect(() => {
-    async function fetchEarned() {
-      if (sushi) return
-      const earned = await getEarned(
-        getMasterChefContract(sushi),
-        lpTokenAddress,
-        account,
-      )
-      setHarvestable(bnToDec(earned))
-    }
-    if (sushi && account) {
-      fetchEarned()
-    }
-  }, [sushi, lpTokenAddress, account, setHarvestable])
+  const handleDrain = () => {
+    dispatch(pageActions.drainToken(farm._pid, callbackDrain));
+  }
+
+  const callbackDrain = (status: any) => {
+    console.log(status);
+  }
 
   const poolActive = true // startTime * 1000 - Date.now() <= 0
-
   return (
     <StyledCardWrapper>
-      {/* {farm.tokenSymbol === 'NERDLING' && <StyledCardAccent />} */}
+      {master && <StyledCardAccent />}
       <Card>
         <CardContent>
           <StyledContent>
             <CardIcon>
               <img
-                src={require(`../../../assets/img/nerds/${farm.icon}`)}
+                src={master ? require(`../../../assets/img/logo.png`) : require(`../../../assets/img/nerds/${protocol}/${farm._victimPoolId % adapter.images + 1}.png`)}
                 alt=""
                 height="65"
               />
             </CardIcon>
             <StyledTitle>{farm.name}</StyledTitle>
             <StyledDetails>
-              <StyledDetail>Deposit {farm.lpToken}</StyledDetail>
-              <StyledDetail>Earn {farm.earnToken.toUpperCase()}</StyledDetail>
+              {/* <StyledDetail>Deposit {farm.lpToken}</StyledDetail>
+              <StyledDetail>Earn {farm.earnToken.toUpperCase()}</StyledDetail> */}
+              <StyledDetail>{`Deposit ${farm.tokenName}`}</StyledDetail>
+              <StyledDetail>Earn Nerdling</StyledDetail>
             </StyledDetails>
             <StyledInsight>
               <span>APY</span>
               <span>
-                {farm.apy
-                  ? `${farm.apy
-                      .times(new BigNumber(100))
-                      .toNumber()
-                      .toLocaleString('en-US')
-                      .slice(0, -1)}%`
-                  : 'Loading ...'}
+                54.7%
               </span>
             </StyledInsight>
             <StyledInsight>
               <span>TVL{` `}($)</span>
               <span>1,336,443</span>
             </StyledInsight>
-            <StyledInsight>
+            {/* <StyledInsight>
               <span>HARVEST{` `}(DRC)</span>
               <span>0.00</span>
-            </StyledInsight>
+            </StyledInsight> */}
             <Spacer />
             <Button
               disabled={!poolActive}
               text={poolActive ? 'Select' : undefined}
-              to={`/nerds/${protocol}/${farm.id}`}
+              to={`/nerds/${protocol}/${farm._pid}`}
+            >
+              {!poolActive && (
+                <Countdown
+                  date={new Date(startTime * 1000)}
+                  renderer={renderer}
+                />
+              )}
+            </Button>
+            <Button
+              disabled={!poolActive}
+              text={poolActive ? 'Drain' : undefined}
+              onClick={handleDrain}
             >
               {!poolActive && (
                 <Countdown

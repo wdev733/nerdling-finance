@@ -1,0 +1,327 @@
+{
+  "address": "0x21e9E2C59C2FEAAabE0Bb66af9916808426cbd7A",
+  "name": "SushiSwap",
+  "images": 9,
+  "pools": [
+    {
+      "name": "USDTWETH",
+      "tokenName": "",
+      "tokenAddress": "0x06da0fd433C1A5d7a4faa01111c044910A184553",
+      "visible": true,
+      "_pid": 3,
+      "_victimPoolId": 0
+    },
+    {
+      "name": "USDCWETH",
+      "tokenName": "",
+      "tokenAddress": "0x397FF1542f962076d0BFE58eA045FfA2d347ACa0",
+      "visible": true,
+      "_pid": 4,
+      "_victimPoolId": 1
+    },
+    {
+      "name": "DAIWETH",
+      "tokenName": "",
+      "tokenAddress": "0xC3D03e4F041Fd4cD388c549Ee2A29a9E5075882f",
+      "visible": true,
+      "_pid": 5,
+      "_victimPoolId": 2
+    },
+    {
+      "name": "sUSDWETH",
+      "tokenName": "",
+      "tokenAddress": "0xF1F85b2C54a2bD284B1cf4141D64fD171Bd85539",
+      "visible": true,
+      "_pid": 6,
+      "_victimPoolId": 3
+    },
+    {
+      "name": "COMPWETH",
+      "tokenName": "",
+      "tokenAddress": "0x31503dcb60119A812feE820bb7042752019F2355",
+      "visible": true,
+      "_pid": 7,
+      "_victimPoolId": 4
+    },
+    {
+      "name": "LENDWETH",
+      "tokenName": "",
+      "tokenAddress": "0x5E63360E891BD60C69445970256C260b0A6A54c6",
+      "visible": true,
+      "_pid": 8,
+      "_victimPoolId": 5
+    },
+    {
+      "name": "SNXWETH",
+      "tokenName": "",
+      "tokenAddress": "0xA1d7b2d891e3A1f9ef4bBC5be20630C2FEB1c470",
+      "visible": true,
+      "_pid": 9,
+      "_victimPoolId": 6
+    },
+    {
+      "name": "UMAWETH",
+      "tokenName": "",
+      "tokenAddress": "0x001b6450083E531A5a7Bf310BD2c1Af4247E23D4",
+      "visible": true,
+      "_pid": 10,
+      "_victimPoolId": 7
+    },
+    {
+      "name": "LINKWETH",
+      "tokenName": "",
+      "tokenAddress": "0xC40D16476380e4037e6b1A2594cAF6a6cc8Da967",
+      "visible": true,
+      "_pid": 11,
+      "_victimPoolId": 8
+    },
+    {
+      "name": "BANDWETH",
+      "tokenName": "",
+      "tokenAddress": "0xA75F7c2F025f470355515482BdE9EFA8153536A8",
+      "visible": true,
+      "_pid": 12,
+      "_victimPoolId": 9
+    },
+    {
+      "name": "AMPLWETH",
+      "tokenName": "",
+      "tokenAddress": "0xCb2286d9471cc185281c4f763d34A962ED212962",
+      "visible": true,
+      "_pid": 13,
+      "_victimPoolId": 10
+    },
+    {
+      "name": "YFIWETH",
+      "tokenName": "",
+      "tokenAddress": "0x088ee5007C98a9677165D78dD2109AE4a3D04d0C",
+      "visible": true,
+      "_pid": 14,
+      "_victimPoolId": 11
+    },
+    {
+      "name": "SUSHIWETH",
+      "tokenName": "",
+      "tokenAddress": "0x795065dCc9f64b5614C407a6EFDC400DA6221FB0",
+      "visible": true,
+      "_pid": 15,
+      "_victimPoolId": 12
+    },
+    {
+      "name": "RENWETH",
+      "tokenName": "",
+      "tokenAddress": "0x611CDe65deA90918c0078ac0400A72B0D25B9bb1",
+      "visible": true,
+      "_pid": 16,
+      "_victimPoolId": 13
+    },
+    {
+      "name": "SRMWETH",
+      "tokenName": "",
+      "tokenAddress": "0x117d4288B3635021a3D612FE05a3Cbf5C717fEf2",
+      "visible": true,
+      "_pid": 17,
+      "_victimPoolId": 15
+    },
+    {
+      "name": "YAMv2WETH",
+      "tokenName": "",
+      "tokenAddress": "0x95b54C8Da12BB23F7A5F6E26C38D04aCC6F81820",
+      "visible": true,
+      "_pid": 18,
+      "_victimPoolId": 16
+    },
+    {
+      "name": "CRVWETH",
+      "tokenName": "",
+      "tokenAddress": "0x58Dc5a51fE44589BEb22E8CE67720B5BC5378009",
+      "visible": true,
+      "_pid": 19,
+      "_victimPoolId": 17
+    },
+    {
+      "name": "UNIWETH",
+      "tokenName": "",
+      "tokenAddress": "0xDafd66636E2561b0284EDdE37e42d192F2844D40",
+      "visible": true,
+      "_pid": 20,
+      "_victimPoolId": 18
+    },
+    {
+      "name": "xSUSHIWETH",
+      "tokenName": "",
+      "tokenAddress": "0x36e2FCCCc59e5747Ff63a03ea2e5C0c2C14911e7",
+      "visible": true,
+      "_pid": 21,
+      "_victimPoolId": 19
+    },
+    {
+      "name": "cDAIDAI",
+      "tokenName": "",
+      "tokenAddress": "0x0Cfe7968e7c34A51217a7C9b9dc1690F416E027e",
+      "visible": true,
+      "_pid": 22,
+      "_victimPoolId": 20
+    },
+    {
+      "name": "WBTCWETH",
+      "tokenName": "",
+      "tokenAddress": "0xCEfF51756c56CeFFCA006cD410B03FFC46dd3a58",
+      "visible": true,
+      "_pid": 23,
+      "_victimPoolId": 21
+    },
+    {
+      "name": "CREAMWETH",
+      "tokenName": "",
+      "tokenAddress": "0xf169CeA51EB51774cF107c88309717ddA20be167",
+      "visible": true,
+      "_pid": 24,
+      "_victimPoolId": 22
+    },
+    {
+      "name": "MEMEWETH",
+      "tokenName": "",
+      "tokenAddress": "0x17b3C19Bd640a59E832AB73eCcF716CB47419846",
+      "visible": true,
+      "_pid": 25,
+      "_victimPoolId": 23
+    },
+    {
+      "name": "wNXMWETH",
+      "tokenName": "",
+      "tokenAddress": "0xFcff3b04C499A57778ae2CF05584ab24278A7FCb",
+      "visible": true,
+      "_pid": 26,
+      "_victimPoolId": 24
+    },
+    {
+      "name": "yyDAI+yUSDC+yUSDT+yTUSDWETH",
+      "tokenName": "",
+      "tokenAddress": "0x382c4a5147Fd4090F7BE3A9Ff398F95638F5D39E",
+      "visible": true,
+      "_pid": 27,
+      "_victimPoolId": 25
+    },
+    {
+      "name": "yyDAI+yUSDC+yUSDT+yTUSDWBTC",
+      "tokenName": "",
+      "tokenAddress": "0x2024324a99231509a3715172d4F4f4E751b38d4d",
+      "visible": true,
+      "_pid": 28,
+      "_victimPoolId": 26
+    },
+    {
+      "name": "CROWETH",
+      "tokenName": "",
+      "tokenAddress": "0x0be88ac4b5C81700acF3a606a52a31C261a24A35",
+      "visible": true,
+      "_pid": 29,
+      "_victimPoolId": 27
+    },
+    {
+      "name": "WBTCrenBTC",
+      "tokenName": "",
+      "tokenAddress": "0x518d6CE2D7A689A591Bf46433443C31615b206C5",
+      "visible": true,
+      "_pid": 30,
+      "_victimPoolId": 28
+    },
+    {
+      "name": "HEGIC-ETH",
+      "tokenName": "",
+      "tokenAddress": "0x6463Bd6026A2E7bFab5851b62969A92f7cca0eB6",
+      "visible": true,
+      "_pid": 63,
+      "_victimPoolId": 31
+    },
+    {
+      "name": "wBTC-tBTC",
+      "tokenName": "",
+      "tokenAddress": "0x2Dbc7dD86C6cd87b525BD54Ea73EBeeBbc307F68",
+      "visible": true,
+      "_pid": 64,
+      "_victimPoolId": 32
+    },
+    {
+      "name": "CORE-ETH",
+      "tokenName": "",
+      "tokenAddress": "0x68C6d02D44E16F1c20088731Ab032f849100D70f",
+      "visible": true,
+      "_pid": 65,
+      "_victimPoolId": 34
+    },
+    {
+      "name": "PICKLE-ETH",
+      "tokenName": "",
+      "tokenAddress": "0x269Db91Fc3c7fCC275C2E6f22e5552504512811c",
+      "visible": true,
+      "_pid": 66,
+      "_victimPoolId": 35
+    },
+    {
+      "name": "ETH-OMG",
+      "tokenName": "",
+      "tokenAddress": "0x742c15d71eA7444964BC39b0eD729B3729ADc361",
+      "visible": true,
+      "_pid": 67,
+      "_victimPoolId": 36
+    },
+    {
+      "name": "AAVE-ETH",
+      "tokenName": "",
+      "tokenAddress": "0xD75EA151a61d06868E31F8988D28DFE5E9df57B4",
+      "visible": true,
+      "_pid": 68,
+      "_victimPoolId": 37
+    },
+    {
+      "name": "MKR-ETH",
+      "tokenName": "",
+      "tokenAddress": "0xBa13afEcda9beB75De5c56BbAF696b880a5A50dD",
+      "visible": true,
+      "_pid": 69,
+      "_victimPoolId": 33
+    },
+    {
+      "name": "AMP-ETH",
+      "tokenName": "",
+      "tokenAddress": "0x15e86E6f65EF7EA1dbb72A5E51a07926fB1c82E3",
+      "visible": true,
+      "_pid": 120,
+      "_victimPoolId": 38
+    },
+    {
+      "name": "XSUSHI-USDC",
+      "tokenName": "",
+      "tokenAddress": "0xd597924b16Cc1904d808285bC9044fd51CEEEaD7",
+      "visible": true,
+      "_pid": 121,
+      "_victimPoolId": 39
+    },
+    {
+      "name": "GHST-ETH",
+      "tokenName": "",
+      "tokenAddress": "0x5a2943B25ce0678Dc0b351928D2DB331A55D94eA",
+      "visible": true,
+      "_pid": 122,
+      "_victimPoolId": 40
+    },
+    {
+      "name": "RARI-ETH",
+      "tokenName": "",
+      "tokenAddress": "0x53aaBCcAE8C1713a6a150D9981D2ee867D0720e8",
+      "visible": true,
+      "_pid": 123,
+      "_victimPoolId": 41
+    },
+    {
+      "name": "DPI-ETH",
+      "tokenName": "",
+      "tokenAddress": "0x34b13F8CD184F55d0Bd4Dd1fe6C07D46f245c7eD",
+      "visible": true,
+      "_pid": 124,
+      "_victimPoolId": 42
+    }
+  ]
+}
