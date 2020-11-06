@@ -1,5 +1,7 @@
+import React, { useCallback, useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
 import BigNumber from 'bignumber.js'
-import React, { useEffect, useState } from 'react'
 import CountUp from 'react-countup'
 import styled from 'styled-components'
 import { useWallet } from 'use-wallet'
@@ -16,6 +18,9 @@ import useTokenBalance from '../../../hooks/useTokenBalance'
 import useSushi from '../../../hooks/useSushi'
 import { getSushiAddress, getSushiSupply } from '../../../sushi/utils'
 import { getBalanceNumber } from '../../../utils/formatBalance'
+
+import { NERDLING_POOL_ADDRESS } from "../../../helper/constants";
+import pageActions from "../../../redux/page/actions";
 
 const PendingRewards: React.FC = () => {
   const [start, setStart] = useState(0)
@@ -75,6 +80,17 @@ const Balances: React.FC = () => {
   const sushiBalance = useTokenBalance(getSushiAddress(sushi))
   const { account, ethereum }: { account: any; ethereum: any } = useWallet()
 
+  const dispatch = useDispatch();
+  const [tokenBalance, setTokenBalance] = useState(0);
+
+  const getInitValues = useCallback(() => {
+    dispatch(pageActions.getBalance(NERDLING_POOL_ADDRESS, (balance: any) => setTokenBalance(balance)));
+  }, [dispatch])
+
+  useEffect(() => {
+    getInitValues()
+  }, [dispatch, getInitValues,])
+  
   useEffect(() => {
     async function fetchTotalSupply() {
       const supply = await getSushiSupply(sushi)
@@ -97,7 +113,7 @@ const Balances: React.FC = () => {
               <div style={{ flex: 1 }}>
                 <Label text="Your NERDLING Balance" />
                 <Value
-                  value={!!account ? getBalanceNumber(sushiBalance) : 'Locked'}
+                  value={!!account ? getBalanceNumber(new BigNumber(tokenBalance)) : 'Locked'}
                 />
               </div>
             </StyledBalance>

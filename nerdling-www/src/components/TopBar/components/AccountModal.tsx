@@ -1,4 +1,8 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import BigNumber from 'bignumber.js'
+
 import styled from 'styled-components'
 import { useWallet } from 'use-wallet'
 import useTokenBalance from '../../../hooks/useTokenBalance'
@@ -15,16 +19,28 @@ import ModalTitle from '../../ModalTitle'
 import Spacer from '../../Spacer'
 import Value from '../../Value'
 
+import { NERDLING_POOL_ADDRESS } from "../../../helper/constants";
+import pageActions from "../../../redux/page/actions";
+
 const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
   const { account, reset } = useWallet()
+
+  const dispatch = useDispatch();
+
+  const [tokenBalance, setTokenBalance] = useState(0);
+
+  const getInitValues = useCallback(() => {
+    dispatch(pageActions.getBalance(NERDLING_POOL_ADDRESS, (balance: any) => setTokenBalance(balance)));
+  }, [dispatch])
+
+  useEffect(() => {
+    getInitValues()
+  }, [dispatch, getInitValues,])
 
   const handleSignOutClick = useCallback(() => {
     onDismiss!()
     reset()
   }, [onDismiss, reset])
-
-  const sushi = useSushi()
-  const sushiBalance = useTokenBalance(getSushiAddress(sushi))
 
   return (
     <Modal>
@@ -38,7 +54,7 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
               <span>🍣</span>
             </CardIcon>
             <StyledBalance>
-              <Value value={getBalanceNumber(sushiBalance)} />
+              <Value value={getBalanceNumber(new BigNumber(tokenBalance))} />
               <Label text="NERDLING Balance" />
             </StyledBalance>
           </StyledBalanceWrapper>

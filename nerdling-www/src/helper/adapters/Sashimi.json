@@ -148,7 +148,7 @@
       "_victimPoolId": 33
     },
     {
-      "name": "svUniswapV2 DAI-ETH",
+      "name": "DAI-ETH",
       "tokenName": "",
       "tokenAddress": "0x56BB940D92AE9a45EBDc77e94C28B960CffD6168",
       "visible": true,
@@ -156,7 +156,7 @@
       "_victimPoolId": 34
     },
     {
-      "name": "svUniswapV2 uSDC-ETH",
+      "name": "uSDC-ETH",
       "tokenName": "",
       "tokenAddress": "0xc5D00a4E730fC2e1C77764A74E5F1308A460de7F",
       "visible": true,
@@ -164,7 +164,7 @@
       "_victimPoolId": 35
     },
     {
-      "name": "svUniswapV2 USDT-ETH",
+      "name": "USDT-ETH",
       "tokenName": "",
       "tokenAddress": "0x8E95bc97B0C1B88Aa8708206C85c06299F778648",
       "visible": true,
@@ -172,7 +172,7 @@
       "_victimPoolId": 36
     },
     {
-      "name": "svUniswapV2 WBTC-ETH",
+      "name": "WBTC-ETH",
       "tokenName": "",
       "tokenAddress": "0x81885d776D2963941ec7434F30D61B851E9697FA",
       "visible": true,
